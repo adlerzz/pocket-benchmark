@@ -11,19 +11,22 @@
         <div class="extender"></div>
         <button onclick={() => del(index)}>-</button>
     </div>
-    <CodeInput bind:code={testcase.code}/>
-    {#if !!testcase.result}
-        <div>
-            <div>
-                <label>Time:</label>
-                <span>{testcase.time} ms</span>
+    <div class="case__section__body">
+        <CodeInput bind:code={testcase.code}/>
+    </div>
+        {#if !!testcase.result}
+            <div class="case__section__footer">
+                <div>
+                    <label>Time:</label>
+                    <span>{testcase.time} ms</span>
+                </div>
+                <div>
+                    <label>Result:</label>
+                    <samp class=".console">{testcase.result}</samp>
+                </div>
             </div>
-            <div>
-                <label>Result:</label>
-                <samp class=".console">{testcase.result}</samp>
-            </div>
-        </div>
-    {/if}
+        {/if}
+    
 </div>
 
 <style>

@@ -5,14 +5,12 @@ import path from 'path';
 export default defineConfig({
     base: './',
     plugins: [svelte({
-      
         onwarn: (warning, handler) => {
           if (warning.code.startsWith('a11y')) {
             return; 
           }
           handler(warning);
         }
-      
     })],
     resolve: {
         alias: {
@@ -22,14 +20,15 @@ export default defineConfig({
     },
     build: {
         target: 'esnext',
-        assetsInlineLimit: 100_000_000,
+        assetsInlineLimit: 0,
         cssCodeSplit: false,
         outDir: '../../app',
+        emptyOutDir: true,
         rollupOptions: {
             output: {
-                manualChunks: undefined,
-                entryFileNames: 'bundle.js',
-                assetFileNames: 'style.css'
+                manualChunks: {},
+                entryFileNames: 'script.js',
+                assetFileNames: 'asset.[ext]'
             }
         }
     }
