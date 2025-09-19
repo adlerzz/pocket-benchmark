@@ -1,0 +1,8 @@
+{
+    "name": "bencher-app",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "npm --prefix fe run dev",
+        "dist": "npm --prefix fe run dist"
+    }
+}   

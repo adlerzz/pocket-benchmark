@@ -1,0 +1,12 @@
+.extender {
+    flex-grow: 1;
+}
+
+.console {
+    white-space: pre-wrap;
+}
+
+button {
+    margin: 3px;
+    padding: 2px 10px;
+}
