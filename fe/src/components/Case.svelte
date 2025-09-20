@@ -14,18 +14,18 @@
     <div class="case__section__body">
         <CodeInput bind:code={testcase.code}/>
     </div>
-        {#if !!testcase.result}
-            <div class="case__section__footer">
-                <div>
-                    <label>Time:</label>
-                    <span>{testcase.time} ms</span>
-                </div>
-                <div>
-                    <label>Result:</label>
-                    <samp class=".console">{testcase.result}</samp>
-                </div>
-            </div>
-        {/if}
+        
+    <div class="case__section__footer">
+        <div>
+            <label>Time:</label>
+            {#if testcase.result}<span>{testcase.time} ms</span>{/if}
+        </div>
+        <div>
+            <label>Result:</label>
+            <samp class="console">{testcase.result}</samp>
+        </div>
+    </div>
+
     
 </div>
 
@@ -42,6 +42,21 @@
 
             h3 {
                 padding-left: 5px;
+            }
+        }
+
+        .case__section__footer {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            min-height: 48px;
+
+            >div {
+                display: flex;
+                flex-direction: column;
+
+                >label {
+                    padding: 3px;
+                }
             }
         }
     }

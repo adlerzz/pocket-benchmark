@@ -11,6 +11,8 @@
         postscript: defvalues.POSTSCRIPT
     });
 
+    let files = $state();
+    let selectFile;
     let logs = $state();
 
     function runAll(){
@@ -25,6 +27,10 @@
     function save(){
         saveToFile(data);
     }
+
+    function load(){
+        console.log(files);
+    }
 </script>
 <div class="page">
     <div class="header">
@@ -32,6 +38,8 @@
         <div class="extender"></div>
         <button onclick={runAll}>Run all</button>
         <button onclick={save}>Save</button>
+        <button onclick={() =>{selectFile.click()}}>Load</button>
+        <input class="hidden" type="file" bind:files bind:this={selectFile} onchange={load} accept=".bjf"/>
     </div>
     
     <div class="central">

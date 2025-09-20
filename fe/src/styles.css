@@ -4,6 +4,13 @@
 
 .console {
     white-space: pre-wrap;
+    background-color: rgb(from white r g b / 0.5);
+    height: 100%;
+    padding: 4px;
+}
+
+.hidden {
+    display: none;
 }
 
 button {

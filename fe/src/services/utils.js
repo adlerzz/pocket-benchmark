@@ -11,7 +11,7 @@ export function saveToFile(data) {
 
     const a = document.createElement("a");
     a.href = url;
-    a.setAttribute('download', (new Date()).toISOString().replaceAll(/\D/g, "") + ".json"); 
+    a.setAttribute('download', (new Date()).toISOString().replaceAll(/\D/g, "") + ".bjf"); 
     a.click();
 
     URL.revokeObjectURL(url);
